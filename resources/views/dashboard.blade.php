@@ -125,7 +125,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="kt-portlet__body">
 												<div id="kt_amcharts_1" style="height: 500px;">
-													
+												
 												</div>
 											</div>
 										</div>
