@@ -64,11 +64,84 @@ License: You must have a valid license purchased only from themeforest(the above
 
 									<!--Begin:: Tasks Aside-->
 								@include('layouts.sidebar')
-								</div>
-							</div>
-						</div>
-					</div>
+								<div class="kt-container">
+									<div class="kt-portlet">
+										<div class="portlet__body kt-portlet__body--fit">
+											<div class="container">
+												<div class="kt-widget kt-widget--user-profile-3">
+													<div class="kt-widget__bottom">
+														<div class="kt-widget__item">
+															<div class="kt-widget__icon">
+																<i class="flaticon2-notepad"></i>
+															</div>
+															<div class="kt-widget__details">
+																<span class="kt-widget__title">Mobil Tersedia</span>
+																<span class="kt-widget__value"><span>1 /</span>2</span>
+															</div>
+														</div>
+														<div class="kt-widget__item">
+															<div class="kt-widget__icon">
+																<i class="flaticon2-user"></i>
+															</div>
+															<div class="kt-widget__details">
+																<span class="kt-widget__title">Customer</span>
+																<span class="kt-widget__value"><span></span>200</span>
+															</div>
+														</div>
+														<div class="kt-widget__item">
+															<div class="kt-widget__icon">
+																<i class="flaticon-notepad"></i>
+															</div>
+															<div class="kt-widget__details">
+																<span class="kt-widget__title">Total Transaksi</span>
+																<span class="kt-widget__value"><span></span>20</span>
+															</div>
+														</div>
+														<div class="kt-widget__item">
+															<div class="kt-widget__icon">
+																<i class="flaticon-statistics"></i>
+															</div>
+															<div class="kt-widget__details">
+																<span class="kt-widget__title">Transaksi Aktif</span>
+																<span class="kt-widget__value"><span></span>5</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+											</div>
+											
+										</div>
+										<div class="kt-portlet">
+											<div class="kt-portlet__head">
+												<div class="kt-portlet__head-label">
+													<span class="kt-portlet__head-icon kt-hidden">
+														<i class="la la-gear"></i>
+													</span>
+													<h3 class="kt-portlet__head-title">
+														Pendapatan Tahun ini
+													</h3>
+												</div>
+											</div>
+											<div class="kt-portlet__body">
+												<div id="kt_amcharts_1" style="height: 500px;">
+													
+												</div>
+											</div>
+										</div>
 
+									</div>
+								</div>
+								
+								
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+						
 					
 					<!-- begin:: Footer -->
 					@include('layouts.footer')
