@@ -11,14 +11,12 @@
                 </a>
             </li>
     
-        
-    
             <li class="kt-nav__item kt-margin-t-20 kt-margin-b-20">
                 <span class="kt-nav__link-title">Mobil</span>
             </li>
         
             <li class="kt-nav__item">
-            <a href="{{route('mobil_index')}}" class="kt-nav__link" data-action="list" data-type="trash">
+            <a href="{{route('car.index')}}" class="kt-nav__link" data-action="list" data-type="trash">
                     <i class="kt-nav__link-icon kt-nav__link-icon--size fa fa-car"></i>
                     <span class="kt-nav__link-text">Data Mobil</span>
                 </a>

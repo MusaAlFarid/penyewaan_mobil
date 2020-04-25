@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="en">
 
 	<!-- begin::Head -->
@@ -34,17 +22,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
 							<!-- begin:: Content Head -->
-							<div class="kt-subheader   kt-grid__item" id="kt_subheader">
-								<div class="kt-container ">
-								
-									<div class="kt-subheader__toolbar">
-										<div class="kt-subheader__wrapper">
-											
-										
-										</div>
-									</div>
-								</div>
-							</div>
+							@include('layouts.subheader')
 
 							<!-- end:: Content Head -->
 
@@ -71,11 +49,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <i class="la la-gear"></i>
                                             </span>
                                             <h3 class="kt-portlet__head-title">
-                                                Data Mobil
+                                                @yield('title')
                                             </h3>
                                         </div>
-                                    </div>
-                                  @include('layouts.table')
+                                    </div> 
+                                  @yield('content')
                                 </div>	
 								
 								</div>
@@ -95,7 +73,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
 		</div>
 
-
+        @include('layouts.script')
 		<!--end::Page Scripts -->
 	</body>
 

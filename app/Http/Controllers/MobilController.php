@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Car;
+use App\Manufacture;
 use Illuminate\Http\Request;
 
 class MobilController extends Controller
