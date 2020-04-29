@@ -16,8 +16,8 @@
     <!--end::Page Custom Styles -->
 
     <!--begin::Global Theme Styles(used by all pages) -->
-    <link href="{{url('frontend/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{url('frontend/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('frontend/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('frontend/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{asset('backend/img/favicon.png')}}" rel="icon" type="image/png">
     <!-- Custom fonts for this template-->
     <link href="{{asset('backend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -30,14 +30,6 @@
     <link href="{{asset('backend/vendor/bootstrap-fileinput-master/css/fileinput.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/vendor/select2/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/vendor/select2/select2-bootstrap.min.css')}}" rel="stylesheet">
-    {{-- font awesome picker --}}
-    <link href="{{asset('backend/vendor/fontawesome-iconpicker/fontawesome-iconpicker.min.css')}}" rel="stylesheet">
-
-    <!--end::Global Theme Styles -->
-
-    <!--begin::Layout Skins(used by all pages) -->
-
-    <!--end::Layout Skins -->
     <link rel="shortcut icon" href="{{ asset('frontend/assets/media/logos/favicon.ico')}}" />
     @yield('css')
 </head>

@@ -27,10 +27,9 @@ Route::get('/blank', function () {
 
 Route::get('/car','CarController@index')->name('car.index');
 Route::get('/car/create','CarController@create')->name('car.create');
-Route::get('/car/source','CarController@source')->name('car.source');
 Route::get('/car/{id}/edit','CarController@edit')->name('car.edit');
 Route::get('/car/{id}/show','CarController@show')->name('car.show');
-Route::get('/car/{id}/destroy','CarController@destroy')->name('car.destroy');
+Route::delete('/car/{id}/destroy','CarController@destroy')->name('car.destroy');
 Route::post('/car/store','CarController@store')->name('car.store');
 Route::post('/car/{id}/update','CarController@update')->name('car.update');
 Route::get('/car/{id}/getImage','CarController@getImage')->name('car.getImage');

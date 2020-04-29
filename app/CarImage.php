@@ -13,7 +13,6 @@ class CarImage extends Model
     protected $table = 'car_images';
     protected $dates = ['deleted_at'];
     protected $fillable = ['car_id','image'];
-    public $incrementing = false;
 
     public function car()
     {

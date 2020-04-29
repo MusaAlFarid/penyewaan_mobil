@@ -47,4 +47,5 @@
 
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="{{url ('frontend/assets/js/pages/components/charts/amcharts/charts.js') }}" type="text/javascript"></script>
+		@include('sweetalert::alert')
 		@yield('js')

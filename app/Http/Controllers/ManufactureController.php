@@ -22,25 +22,6 @@ class ManufactureController extends Controller
         return view('backend.manufacture.index');
     }
 
-    public function source(){
-        $query= Manufacture::query();
-        return DataTables::eloquent($query)
-        ->filter(function ($query) {
-            if (request()->has('search')) {
-                $query->where(function ($q) {
-                    $q->where('name', 'LIKE', '%' . request('search')['value'] . '%');
-                });
-            }
-            })
-            ->addColumn('name', function ($data) {
-                return title_case($data->name);
-            })
-            ->addIndexColumn()
-            ->addColumn('action', 'backend.manufacture.index-action')
-            ->rawColumns(['action'])
-            ->toJson();
-    }
-
     public function create()
     {
         return view('backend.manufacture.create');
@@ -50,7 +31,6 @@ class ManufactureController extends Controller
     {
         DB::beginTransaction();
         try {
-            $requset = $request->merge(['slug'=>$request->name]);
             $this->manufacture->create($request->all());
             DB::commit();
             return redirect()->route('manufacture.index')->with('success-message','Data telah disimpan');
@@ -79,7 +59,6 @@ class ManufactureController extends Controller
     {
         DB::beginTransaction();
         try {
-            $request = $request->merge(['slug'=>$request->name]);
             $this->manufacture->find($id)->update($request->all());
             DB::commit();
             return redirect()->route('manufacture.index')->with('success-message','Data telah d irubah');

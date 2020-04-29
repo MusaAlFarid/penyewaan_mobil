@@ -28,8 +28,8 @@
                         <div class="form-group">
                           <label>Merk</label>
                             <select name="manufacture_id" class="form-control select2">
-                                @foreach (App\Manufacture::orderBy('name','asc')->get() as $row)
-                                <option value="{{$row->id}}">{{title_case($row->name)}}</option>
+                                @foreach ($data as $row)
+                                <option value="{{$row->id}}">{{$row->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -53,13 +53,13 @@
                     <div class="col">
                         <div class="form-group">
                           <label>Sewa Perhari</label>
-                          <input type="text" name="price" id="" class="form-control border-dark-50" required="">
+                          <input type="number" name="price" id="" class="form-control border-dark-50" required="">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                           <label>Denda Perhari</label>
-                          <input type="text" name="penalty" id="" class="form-control border-dark-50" required="">
+                          <input type="number" name="penalty" id="" class="form-control border-dark-50" required="">
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,20 @@
 </div>
 @endsection
 @section('js')
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="{{asset('backend/vendor/jquery/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('backend/vendor/bootstrap-fileinput-master/js/plugins/sortable.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('backend/vendor/bootstrap-fileinput-master/js/fileinput.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('backend/vendor/bootstrap-fileinput-master/themes/fa/theme.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('backend/vendor/bootstrap-fileinput-master/js/locales/id.js')}}" type="text/javascript"></script>
+    <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}" type="text/javascript"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('backend/vendor/select2/select2.min.js')}}" type="text/javascript"></script>
+   
 <script>
     $('.select2').select2({
             dropdownParent: $('body'),
