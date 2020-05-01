@@ -10,7 +10,7 @@
             <table class="table table-sm table-bordered table-striped" id="lookup">
                 <thead>
                     <tr>
-                        <th>#No</th>
+                        <th>No</th>
                         <th>NIK</th>
                         <th>Nama</th>
                         <th>Tahun</th>
