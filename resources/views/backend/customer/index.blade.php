@@ -19,11 +19,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>1</td>
+                  <td>123</td>
+                  <td>abc</td>
+                  <td>2020</td>
+                  <td>123</td>
+                  <td>123</td>
                 </tbody>  
                 
                
