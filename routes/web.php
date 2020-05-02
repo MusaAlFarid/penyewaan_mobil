@@ -24,7 +24,7 @@ Route::get('/blank', function () {
 });
 
 // Car
-
+Route::get('car/source','CarController@source')->name('car.source');
 Route::get('/car','CarController@index')->name('car.index');
 Route::get('/car/create','CarController@create')->name('car.create');
 Route::get('/car/{id}/edit','CarController@edit')->name('car.edit');

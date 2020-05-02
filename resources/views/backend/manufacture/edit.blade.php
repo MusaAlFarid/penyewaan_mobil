@@ -1,4 +1,4 @@
-@extends('backend.layouts')
+@extends('layouts.master')
 @section('title','Ubah Data')
 @section('content')
 <div class="col-lg-12">

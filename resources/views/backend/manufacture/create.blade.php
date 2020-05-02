@@ -1,4 +1,4 @@
-@extends('backend.layouts')
+@extends('layouts.master')
 @section('title','Tambah Data')
 @section('content')
 <div class="col-lg-12">

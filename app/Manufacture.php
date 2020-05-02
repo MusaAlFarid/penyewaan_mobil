@@ -12,6 +12,6 @@ class Manufacture extends Model
 
     protected $table = 'manufactures';
     protected $dates = ['deleted_at'];
-    protected $fillable = ['name','slug'];
+    protected $fillable = ['name'];
 
 }

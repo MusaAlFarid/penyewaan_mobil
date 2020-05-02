@@ -39,6 +39,7 @@
                                 <input name="_method" type="hidden" value="DELETE">
                             <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus data {{$item->name}}?')"><i class="flaticon2-rubbish-bin-delete-button"></i></button>
                                 <a href="{{route('car.edit', $item->id)}}" class="btn btn-outline-primary btn-elevate btn-circle btn-icon"><i class="flaticon-edit"></i></a> 
+                                <a href="{{route('car.show', $item->id)}}" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-search"></i></a> 
                             </form>
                         </td>
                     </tr>   
@@ -52,7 +53,6 @@
         </div>
     </div>
 </div>
-@include('backend.car.modal-show')
 @endsection
 @section('js')
 <script type="text/javascript">

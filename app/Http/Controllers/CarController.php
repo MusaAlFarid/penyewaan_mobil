@@ -68,7 +68,20 @@ class CarController extends Controller
     public function show($id)
     {
         $data = $this->car->find($id);
-        return $data;
+        $merks =$data->manufacture_id;
+        $getimage =$data->id;
+        $gambar = DB::table('car_images')
+        ->select('car_images.image')
+        ->join('cars','cars.id','=','car_images.car_id')
+        ->where('car_images.deleted_at','=',Null)
+        ->where('car_images.car_id','=',$getimage)
+        ->get();
+        $merk = DB::table('cars')
+        ->select('manufactures.name as manu')
+        ->join('manufactures','manufactures.id','=','cars.manufacture_id')
+        ->orderBy('manufacture_id')
+        ->where('manufactures.id','=',$merks)->first();
+        return view('backend.car.show',compact('data','merk','gambar'));
 
     }
 

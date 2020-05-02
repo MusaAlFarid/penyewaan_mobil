@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link" data-action="list" data-type="trash">
+                <a href="{{ route('manufacture.index')}}" class="kt-nav__link" data-action="list" data-type="trash">
                     <i class="kt-nav__link-icon kt-nav__link-icon--size fa fa-car"></i>
                     <span class="kt-nav__link-text">Merk Mobil</span>
                 </a>

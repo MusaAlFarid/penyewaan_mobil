@@ -1,4 +1,4 @@
-@extends('backend.layouts')
+@extends('layouts.master')
 @section('title','Merk')
 @section('content')
 <div class="col-lg-12">
