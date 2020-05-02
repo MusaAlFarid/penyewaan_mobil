@@ -24,7 +24,6 @@ Route::get('/blank', function () {
 });
 
 // Car
-Route::get('car/source','CarController@source')->name('car.source');
 Route::get('/car','CarController@index')->name('car.index');
 Route::get('/car/create','CarController@create')->name('car.create');
 Route::get('/car/{id}/edit','CarController@edit')->name('car.edit');
@@ -47,3 +46,7 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
     Route::post('/manufacture/store','ManufactureController@store')->name('manufacture.store');
     Route::post('/manufacture/{id}/update','ManufactureController@update')->name('manufacture.update');
     Route::get('/manufacture/{id}/find','ManufactureController@find')->name('manufacture.find');
+
+    //Customer
+
+    Route::get('/customer', 'CustomerController@index')->name('customer.index');

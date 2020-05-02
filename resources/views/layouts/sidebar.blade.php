@@ -45,6 +45,20 @@
                     <span class="kt-nav__link-text">Daftar Transaksi</span>
                 </a>
             </li>
+            
+            <li class="kt-nav__item kt-margin-t-20 kt-margin-b-20">
+                <span class="kt-nav__link-title">Customer</span>
+            </li>
+
+            <li class="kt-nav__item">
+                <a href="{{route('customer.index')}}" class="kt-nav__link">
+                    <i class="kt-nav__link-icon fa fa-credit-card"></i>
+                    <span class="kt-nav__link-text">Data Customer</span>
+                </a>
+            </li>
+            
+            
+
         </ul>
     </div>
 </div>
