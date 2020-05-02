@@ -14,7 +14,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view ('backend.customer.index');
+        $no = 1;
+        $data = Customer::all();
+        return view('backend.customer.index',compact('data','no'));
+     
     }
 
     /**

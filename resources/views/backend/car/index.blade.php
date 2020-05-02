@@ -4,7 +4,7 @@
 <div class="col-lg-12">
     <div class="card mb-4">
         <div class="card-header py-3">
-                <a href="{{route('car.create')}}" class="btn btn-danger">Tambah Data</a>
+                <a href="{{route('car.create')}}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body">
             <table class="table table-sm table-bordered table-striped" id="lookup">
@@ -27,7 +27,7 @@
                     <td>{{$item->name}}</td>
                     <td>{{$item->manufacture}}</td>
                         <td>{{$item->year}}</td>
-                        <td>Rp.{{$item->price}}</td>
+                        <td>Rp.{{ $item->price}}</td>
                         @if ($item->status=='o')
                         <td style="color:blue;">ready</td>
                         @else

@@ -50,3 +50,4 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
     //Customer
 
     Route::get('/customer', 'CustomerController@index')->name('customer.index');
+    Route::get('/customer/create', 'CustomerController@create')->name('customer.create');
