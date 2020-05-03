@@ -7,7 +7,7 @@
                 <a href="{{route('car.create')}}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body">
-            <table class="table table-sm table-bordered table-striped" id="lookup">
+            <table class="table table-sm table-bordered table-striped text-center" id="lookup">
                 <thead>
                     <tr>
                         <th>#No</th>

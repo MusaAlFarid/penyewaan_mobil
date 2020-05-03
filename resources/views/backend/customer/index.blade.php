@@ -6,8 +6,8 @@
         <div class="card-header py-3">
                 <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Data</a>
         </div>
-        <div class="card-body">
-            <table class="table table-sm table-bordered table-striped" id="lookup">
+        <div class="card-body float">
+            <table class="table table-sm table-bordered table-striped text-center" id="lookup">
                 <thead>
                     <tr>
                         <th>No</th>
