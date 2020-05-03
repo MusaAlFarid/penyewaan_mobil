@@ -13,6 +13,11 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->customer = new Customer();
+    }
+
     public function index()
     {
         $no = 1;
