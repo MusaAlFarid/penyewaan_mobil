@@ -11,8 +11,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>NIK</th>
                         <th>Nama</th>
+                        <th>NIK</th>
                         <th>Alamat</th>
                         <th>No. Telp</th>
                         <th>Email</th>
@@ -21,6 +21,7 @@
                 </thead>
                 <tbody>
                   @foreach ($data as $item)
+                  <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $item->name }}</td>
                   <td>{{ $item->nik }}</td>
@@ -28,14 +29,16 @@
                   <td>{{ $item->phone_number }}</td>
                   <td>{{ $item->email }}</td>
                   
-                  @endforeach
-                  <td> <form action="#" method="POST">
-                    {{-- {{ csrf_field() }} --}}
+                  
+                  <td> <form action="{{ route('customer.destroy', $item->id) }}" method="POST">
+                    {{ csrf_field() }}
                     <input name="_method" type="hidden" value="DELETE">
-                <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ?')"><i class="flaticon2-rubbish-bin-delete-button"></i></button>
+                    <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus Customer {{$item->name}}?')"><i class="flaticon2-rubbish-bin-delete-button"></i></button>
                     <a href="" class="btn btn-outline-primary btn-elevate btn-circle btn-icon"><i class="flaticon-edit"></i></a> 
                     <a href="" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-search"></i></a> 
                 </form></td>
+            </tr>
+            @endforeach
                 </tbody>  
                 
                

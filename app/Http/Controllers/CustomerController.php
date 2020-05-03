@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CustomerController extends Controller
 {
@@ -27,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.customer.create');
     }
 
     /**
@@ -38,7 +39,25 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'address' => 'required',
+            'nik' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required'
+
+        ]);
+
+        Customer::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'nik' => $request->nik,
+            'phone_number' => $request->phone_number,
+            'email' => $request->email
+        ]);
+
+        alert()->success('Berhasil','Data telah ditambahkan!');
+        return redirect()->route('customer.index');
     }
 
     /**
@@ -81,8 +100,11 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        //
+        $this->customer->destroy($id);
+        alert()->success('Berhasil','Data berhasil dihapus!');
+        
+        return redirect()->route('customer.index');
     }
 }

@@ -52,7 +52,7 @@
 
             <li class="kt-nav__item">
                 <a href="{{route('customer.index')}}" class="kt-nav__link">
-                    <i class="kt-nav__link-icon fa fa-credit-card"></i>
+                    <i class="kt-nav__link-icon fa fa-user"></i>
                     <span class="kt-nav__link-text">Data Customer</span>
                 </a>
             </li>

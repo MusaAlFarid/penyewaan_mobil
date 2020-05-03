@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Customer')
+@section('title','Tambah Customer')
 @section('content')
 <div class="col-lg-12">
     <div class="card mb-4">
@@ -36,14 +36,14 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                          <label>Phone Number</label>
+                          <label>No. HP</label>
                           <input type="number" name="phone_number" id="" class="form-control border-dark-50" required="">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                           <label>email</label>
-                          <input type="number" name="email" id="" class="form-control border-dark-50" required="">
+                          <input type="email" name="email" id="" class="form-control border-dark-50" required="">
                         </div>
                     </div>
                 </div>
