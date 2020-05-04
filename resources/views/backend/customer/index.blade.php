@@ -34,7 +34,7 @@
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="DELETE">
                     <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus Customer {{$item->name}}?')"><i class="flaticon2-rubbish-bin-delete-button"></i></button>
-                    <a href="" class="btn btn-outline-primary btn-elevate btn-circle btn-icon"><i class="flaticon-edit"></i></a> 
+                    <a href="{{route('customer.edit', $item->id)}}" class="btn btn-outline-primary btn-elevate btn-circle btn-icon"><i class="flaticon-edit"></i></a> 
                     <a href="" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-search"></i></a> 
                 </form></td>
             </tr>

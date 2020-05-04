@@ -6,6 +6,16 @@
         <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Update Data</h6>
         </div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+           <ul>
+               @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+               @endforeach
+           </ul>
+        </div>
+            
+        @endif
         <div class="card-body">
             <form action="{{route('car.update',$data->id)}}" method="post" enctype="multipart/form-data">
                 @csrf

@@ -53,3 +53,5 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
     Route::get('/customer/create', 'CustomerController@create')->name('customer.create');
     Route::post('/customer/store', 'CustomerController@store')->name('customer.store');
     Route::delete('customer/{id}/destroy', 'CustomerController@destroy')->name('customer.destroy');
+    Route::get('customer/{id}/edit', 'CustomerController@edit')->name('customer.edit');
+    Route::post('customer/{id}/update', 'CustomerController@update')->name('customer.update');

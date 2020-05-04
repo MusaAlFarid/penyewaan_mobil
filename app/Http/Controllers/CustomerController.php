@@ -82,9 +82,10 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $data = $this->customer->find($id);
+        return view('backend.customer.edit',compact('data'));
     }
 
     /**
@@ -94,9 +95,11 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        //
+        $this->customer->find($id)->update($request->all());
+        alert()->success('Berhasil.','Data telah diperbarui!');
+        return redirect()->route('customer.index');
     }
 
     /**
