@@ -33,16 +33,16 @@
             </li>
             
             <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
+                <a href="{{ route('transaksi.index') }}" class="kt-nav__link">
                     <i class="kt-nav__link-icon fa fa-credit-card"></i>
-                    <span class="kt-nav__link-text">Riwayat Transaksi</span>
+                    <span class="kt-nav__link-text">Daftar Transaksi</span>
                 </a>
             </li>
             
             <li class="kt-nav__item">
-                <a href="#" class="kt-nav__link">
+                <a href="{{ route('riwayat.index') }}" class="kt-nav__link">
                     <i class="kt-nav__link-icon fa fa-credit-card"></i>
-                    <span class="kt-nav__link-text">Daftar Transaksi</span>
+                    <span class="kt-nav__link-text">Riwayat Transaksi</span>
                 </a>
             </li>
             

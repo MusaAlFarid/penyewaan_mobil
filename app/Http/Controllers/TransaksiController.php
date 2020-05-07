@@ -1,20 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Car;
-use App\Manufacture;
+
+use App\Transaksi;
 use Illuminate\Http\Request;
 
-class MobilController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->car = new Car();
+        $this->customer = new Customer();
+        $this->transaction = new Transaction();
+    }
+    
     public function index()
     {
-        return view('mobil.index');
+        return view ('backend.transaksi.index');
     }
 
     /**
@@ -22,6 +29,11 @@ class MobilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function riwayat()
+    {
+        return view('backend.transaksi.riwayat');
+    }
+
     public function create()
     {
         //
@@ -41,10 +53,10 @@ class MobilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Transaksi $transaksi)
     {
         //
     }
@@ -52,10 +64,10 @@ class MobilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Transaksi $transaksi)
     {
         //
     }
@@ -64,10 +76,10 @@ class MobilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Transaksi $transaksi)
     {
         //
     }
@@ -75,10 +87,10 @@ class MobilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Transaksi $transaksi)
     {
         //
     }

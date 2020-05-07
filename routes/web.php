@@ -59,3 +59,7 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
 Auth::routes();
 
 Route::post('/dashboard', 'DashboardController@home')->name('dashboard.home');
+
+    //Transaksi
+    Route::get('/transaksi', 'TransaksiController@index')->name('transaksi.index');
+    Route::get('/riwayat', 'TransaksiController@riwayat')->name('riwayat.index');
