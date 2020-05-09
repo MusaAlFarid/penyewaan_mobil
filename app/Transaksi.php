@@ -14,8 +14,8 @@ class Transaksi extends Model
     use SoftDeletes;
    
     protected $table = 'transaksi';
-    protected $dates = ['deleted_at'];
-    protected $fillable = ['car_id','customer_id','invoice_no','rent_date','back_date','return_date','price','penalty','status'];
+    protected $dates = ['deleted_at', 'rent_date','return_date'];
+    protected $fillable = ['car_id','customer_id','invoice_no','rent_date','return_date','price','penalty','status'];
     public $incrementing = false;
 
     public function customer()
@@ -27,5 +27,10 @@ class Transaksi extends Model
     {
         return $this->belongsTo('Car');
     }
+    public function getCreatedAtAttribute()
+{
+    return Carbon::parse($user->attributes['rent_date'])
+       ->format('d, M Y H:i');
+}
     
 }
