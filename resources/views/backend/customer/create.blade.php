@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-gorup">
-                            <button type="submit" class="btn btn-primary  shadow-sm">Simpan</button>
                             <a class="btn btn-light shadow-sm" href="{{route('customer.index')}}">Batal</a>
+                            <button type="submit" class="btn btn-primary  shadow-sm">Simpan</button>
                         </div>
                     </div>
                 </div>

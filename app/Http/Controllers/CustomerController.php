@@ -6,6 +6,7 @@ use App\Customer;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
+
 class CustomerController extends Controller
 {
     /**

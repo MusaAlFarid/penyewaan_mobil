@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Transaksi;
-use App\Car;
-use App\Customer;
+use App\HistoryTransaksi;
 use Illuminate\Http\Request;
 
-class TransaksiController extends Controller
+class HistoryTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->car = new Car();
-        $this->customer = new Customer();
-        $this->traksaksi = new Transaksi();
-    }
-    
     public function index()
     {
-        return view ('backend.transaksi.index');
+        //
     }
 
     /**
@@ -31,16 +22,9 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function riwayat()
-    {
-        return view('backend.transaksi.riwayat');
-    }
-
     public function create()
     {
-        $data = Customer::all();
-        $item = Car::all();
-        return view('backend.transaksi.create',compact('data','item'));
+        //
     }
 
     /**
@@ -57,10 +41,10 @@ class TransaksiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\HistoryTransaksi  $historyTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaksi $transaksi)
+    public function show(HistoryTransaksi $historyTransaksi)
     {
         //
     }
@@ -68,10 +52,10 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\HistoryTransaksi  $historyTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit(HistoryTransaksi $historyTransaksi)
     {
         //
     }
@@ -80,10 +64,10 @@ class TransaksiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\HistoryTransaksi  $historyTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaksi $transaksi)
+    public function update(Request $request, HistoryTransaksi $historyTransaksi)
     {
         //
     }
@@ -91,10 +75,10 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\HistoryTransaksi  $historyTransaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy(HistoryTransaksi $historyTransaksi)
     {
         //
     }

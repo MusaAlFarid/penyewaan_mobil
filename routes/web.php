@@ -56,10 +56,11 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
     Route::get('customer/{id}/edit', 'CustomerController@edit')->name('customer.edit');
     Route::post('customer/{id}/update', 'CustomerController@update')->name('customer.update');
 
-Auth::routes();
+    Auth::routes();
 
-Route::post('/dashboard', 'DashboardController@home')->name('dashboard.home');
+    Route::post('/dashboard', 'DashboardController@home')->name('dashboard.home');
 
     //Transaksi
     Route::get('/transaksi', 'TransaksiController@index')->name('transaksi.index');
     Route::get('/riwayat', 'TransaksiController@riwayat')->name('riwayat.index');
+    Route::get('transaksi/create', 'TransaksiController@create')->name('transaksi.create');

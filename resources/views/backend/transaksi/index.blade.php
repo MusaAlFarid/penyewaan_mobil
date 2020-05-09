@@ -4,7 +4,7 @@
 <div class="col-lg-12">
     <div class="card mb-4">
         <div class="card-header py-3">
-                <a href="" class="btn btn-primary">Tambah Data</a>
+                <a href="{{ route('transaksi.create') }}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-body float">
             <table class="table table-sm table-bordered table-striped text-center" id="lookup">
