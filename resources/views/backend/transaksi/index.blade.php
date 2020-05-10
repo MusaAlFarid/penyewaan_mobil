@@ -26,7 +26,7 @@
                   <tr>
                   <td>{{ $no++ }}</td>
                   <td>{{ $item->invoice_no }}</td>
-                  <td>{{$item->rent_date}}</td>
+                  <td>{{date("d-m-Y", strtotime($item->rent_date))}}</td>
                   <td>{{$item->return_date}}</td>
                   {{-- name customer --}}
                   <td>{{$item->name_customer}} </td>

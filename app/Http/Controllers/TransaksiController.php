@@ -31,6 +31,7 @@ class TransaksiController extends Controller
         ->join('cars', 'transaksi.car_id', '=', 'cars.id')
         ->select('*','customers.name AS name_customer','cars.name AS name_car')
         ->get();
+        
         return view('backend.transaksi.index',compact('data','no'));
     }
 
