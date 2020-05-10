@@ -23,7 +23,9 @@ class TransaksiController extends Controller
     
     public function index()
     {
-        return view ('backend.transaksi.index');
+        $no = 1;
+        $data = Customer::all();
+        return view('backend.transaksi.index',compact('data','no'));
     }
 
     /**

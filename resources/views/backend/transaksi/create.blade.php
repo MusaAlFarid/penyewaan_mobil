@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-gorup">
-                            <a class="btn btn-light shadow-sm" href="">Batal</a>
+                            <a class="btn btn-light shadow-sm" href="{{ route('transaksi.index') }}">Batal</a>
                             <button type="submit" class="btn btn-primary  shadow-sm">Simpan</button>
                         </div>
                     </div>

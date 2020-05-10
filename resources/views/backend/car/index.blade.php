@@ -29,9 +29,9 @@
                         <td>{{$item->year}}</td>
                         <td>Rp.{{ $item->price}}</td>
                         @if ($item->status=='o')
-                        <td style="color:blue;">ready</td>
+                        <td style="color:blue;"><b>ready</b></td>
                         @else
-                        <td style="color:red;">terpakai</td>
+                        <td style="color:red;"><b>terpakai</b></td>
                         @endif
                         <td> 
                             <form action="{{ route('car.destroy', $item->id) }}" method="POST">

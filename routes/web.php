@@ -64,3 +64,4 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
     Route::get('/transaksi', 'TransaksiController@index')->name('transaksi.index');
     Route::get('/riwayat', 'TransaksiController@riwayat')->name('riwayat.index');
     Route::get('transaksi/create', 'TransaksiController@create')->name('transaksi.create');
+    Route::post('/transaksi/store', 'TransaksiController@store')->name('transaksi.store');

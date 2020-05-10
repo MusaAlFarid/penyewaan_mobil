@@ -22,14 +22,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                  {{-- @foreach ($data as $item) --}}
+                  @foreach ($data as $item)
                   <tr>
-                  <td>1</td>
-                  <td>12032983</td>
-                  <td>22 - 2 - 2002 </td>
-                  <td>30 - 3 - 2003 </td>
-                  <td>Aji</td>
-                  <td>Avanza</td>
+                  <td>{{ $no++ }}</td>
+                  <td>{{ $item->no_invoice }}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td>
                     <span class="btn btn-label-success btn-pill">Selesai</span>
                     </td>
@@ -42,7 +42,7 @@
                     <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus Customer ?')"><i class="flaticon-circle"></i></button>
                 </form></td>
             </tr>
-            {{-- @endforeach --}}
+            @endforeach
                 </tbody>  
                 
                
