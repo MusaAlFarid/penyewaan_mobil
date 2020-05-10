@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Transaksi;
 use App\Car;
 use App\Customer;
@@ -25,6 +26,11 @@ class TransaksiController extends Controller
     {
         $no = 1;
         $data = Customer::all();
+        $data = DB::table('transaksi')
+        ->join('customers', 'transaksi.customer_id', '=', 'customers.id')
+        ->join('cars', 'transaksi.car_id', '=', 'cars.id')
+        ->select('*','customers.name AS name_customer','cars.name AS name_car')
+        ->get();
         return view('backend.transaksi.index',compact('data','no'));
     }
 

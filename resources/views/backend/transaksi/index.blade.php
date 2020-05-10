@@ -25,11 +25,13 @@
                   @foreach ($data as $item)
                   <tr>
                   <td>{{ $no++ }}</td>
-                  <td>{{ $item->no_invoice }}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{ $item->invoice_no }}</td>
+                  <td>{{$item->rent_date}}</td>
+                  <td>{{$item->return_date}}</td>
+                  {{-- name customer --}}
+                  <td>{{$item->name_customer}} </td>
+                  {{-- name cars --}}
+                  <td>{{$item->name_car}}</td>
                   <td>
                     <span class="btn btn-label-success btn-pill">Selesai</span>
                     </td>
