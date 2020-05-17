@@ -7,7 +7,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Data</h6>
         </div>
         <div class="card-body">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{ route('transaksi.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="row">
@@ -40,13 +40,13 @@
                     <div class="col">
                         <div class="form-group">
                           <label>Tanggal Pinjam</label>
-                          <input type="dateTime" name="rent_date" id="" class="form-control datepicker border-dark-50" required="">
+                          <input type="text" name="rent_date" id="" class="form-control datepicker border-dark-50" required="">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                           <label>Tanggal Kembali</label>
-                          <input type="dateTime" name="return_date" id="" class="form-control datepicker border-dark-50" required="">
+                          <input type="text" name="return_date" id="" class="form-control datepicker border-dark-50" required="">
                         </div>
                     </div>
                 </div>

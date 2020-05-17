@@ -25,7 +25,7 @@ class TransaksiController extends Controller
     public function index()
     {
         $no = 1;
-        $data = Customer::all();
+        // $data = Customer::all();
         $data = DB::table('transaksi')
         ->join('customers', 'transaksi.customer_id', '=', 'customers.id')
         ->join('cars', 'transaksi.car_id', '=', 'cars.id')
