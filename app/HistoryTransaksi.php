@@ -5,12 +5,12 @@ namespace App;
 
 use App\Car;
 use App\Customer;
-use Carbon\Carbon;
 use App\Transaksi;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Transaksi extends Model
+class HistoryTransaksi extends Model
 {
     use SoftDeletes;
    

@@ -33,10 +33,10 @@
                   {{-- name cars --}}
                   <td>{{$item->name_car}}</td>
                   <td>
-                      @if($item->status)
-                    <span class="btn btn-label-success btn-pill">Selesai</span>
+                    @if($item->status)
+                        <span class="btn btn-label-success btn-pill">Selesai</span>
                     @else
-                    <span class="btn btn-label-danger btn-pill">Belum</span>
+                        <span class="btn btn-label-danger btn-pill">Belum</span>
                     @endif
                   </td>
                   

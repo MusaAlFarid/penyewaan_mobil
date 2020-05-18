@@ -14,7 +14,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label>Nama Customer</label>
-                            <select name="manufacture_id" class="form-control select2">
+                            <select name="customer_id" class="form-control select2">
                                 @foreach ($data as $row)
                                 <option value="{{$row->id}}">{{$row->name}}</option>
                                 @endforeach
@@ -27,7 +27,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label>Mobil</label>
-                            <select name="transaksi_id" class="form-control select2">
+                            <select name="car_id" class="form-control select2">
                                 @foreach ($item as $row)
                                 <option value="{{$row->id}}">{{$row->name}} | {{ $row->license_number }}</option>
                                 @endforeach

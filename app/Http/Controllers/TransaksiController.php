@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use App\Transaksi;
 use App\Car;
 use App\Customer;
+use App\Transaction;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class TransaksiController extends Controller
 {
@@ -19,7 +20,7 @@ class TransaksiController extends Controller
     {
         $this->car = new Car();
         $this->customer = new Customer();
-        $this->traksaksi = new Transaksi();
+        $this->transaction = new Transaction();
     }
     
     public function index()
@@ -60,7 +61,28 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'customer_id' => 'required',
+            'car_id' => 'required',
+            'rent_date' => 'required|date',
+            'return_date' => 'required|date',
+        ]);
+
+        $car = Car::find($request->car_id);
+        Transaction::create([
+            'customer_id' => $request->customer_id,
+            'car_id' => $request->car_id,
+            'invoice_no' => 'XXXXXX',
+            'rent_date' => $request->rent_date,
+            'return_date' => $request->return_date,
+            'final_date' => null,
+            'amount_price' => Carbon::parse($request->rent_date)->diffInDays($request->return_date) * $car->price,
+            'amount_penalty' => 0,
+            'status' => 0
+        ]);
+
+        alert()->success('Berhasil','Data telah ditambahkan!');
+        return redirect()->route('transaksi.index');
     }
 
     /**
