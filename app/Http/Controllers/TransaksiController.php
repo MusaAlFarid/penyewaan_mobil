@@ -72,7 +72,7 @@ class TransaksiController extends Controller
         Transaction::create([
             'customer_id' => $request->customer_id,
             'car_id' => $request->car_id,
-            'invoice_no' => 'XXXXXX',
+            'invoice_no' => $this->generateInvoice(date('d-m-Y')),
             'rent_date' => $request->rent_date,
             'return_date' => $request->return_date,
             'final_date' => null,
@@ -114,6 +114,17 @@ class TransaksiController extends Controller
      * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
+    private function generateInvoice($date){
+        $tanggal = substr($date,8,2);
+        $bulan = substr($date,5,2);
+        $tahun = substr($date,2,2);
+        $transaction = $this->transaction->whereDate('created_at',$date)->get();
+        $no = 'RM-'.$tanggal.$bulan.$tahun.'-'.sprintf('%05s',$transaction->count()+1);
+        return $no;
+    }
+
+   
+
     public function update(Request $request, Transaksi $transaksi)
     {
         //
