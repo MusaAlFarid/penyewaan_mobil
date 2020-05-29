@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Data Transaksi')
+@section('title','Riwayat Transaksi')
 @section('content')
 <div class="col-lg-12">
     <div class="card mb-4">
@@ -22,30 +22,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                  {{-- @foreach ($data as $item) --}}
+                  @foreach ($data as $item)
                   <tr>
-                  <td>1</td>
-                  <td>12032983</td>
-                  <td>22 - 2 - 2002 </td>
-                  <td>30 - 3 - 2003 </td>
-                  <td>Aji</td>
-                  <td>Avanza</td>
+                  <td>{{ $no++ }}</td>
+                  <td>{{ $item->invoice_no }}</td>
+                  <td>{{ date("d-m-Y", strtotime($item->rent_date )) }}</td>
+                  <td>{{ date("d-m-Y", strtotime($item->return_date )) }}</td>
+                  {{-- name customer --}}
+                  <td>{{$item->name_customer}} </td>
+                  {{-- name cars --}}
+                  <td>{{$item->name_car}}</td>
                   <td>
-                    <span class="btn btn-label-success btn-pill">Tersedia</span>
+                    @if($item->status_transaksi)
+                        <span class="btn btn-label-success btn-pill">Selesai</span>
+                    @else
+                        <span class="btn btn-label-danger btn-pill">Belum</span>
+                    @endif
+                  </td>
+                  
+                  
+                  <td>
+                    @if($item->status_transaksi == false)
+                    <a href="{{ route('transaksi.complete', ['id' => $item->id_transaksi]) }}" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-check-mark"></i></a> 
+                    @endif
+                    <a href="{{ route('riwayat.destroy', ['id' => $item->id_transaksi]) }}" class="btn btn-outline-danger btn-elevate btn-circle btn-icon" ><i class="flaticon-circle"></i></a> 
                     </td>
-                  
-                  
-                  <td> <form action="" method="POST">
-                    {{ csrf_field() }}
-                    <input name="_method" type="hidden" value="DELETE">
-                    <a href="" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-check-mark"></i></a> 
-                    <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus Customer ?')"><i class="flaticon-circle"></i></button>
-                </form></td>
-            </tr>
-            {{-- @endforeach --}}
+                </tr>
+                @endforeach
                 </tbody>  
-                
-               
             </table>
         </div>
     </div>

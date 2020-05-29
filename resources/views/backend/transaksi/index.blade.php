@@ -47,11 +47,9 @@
                     @endif
                     <a href="{{ route('transaksi.destroy', ['id' => $item->id_transaksi]) }}" class="btn btn-outline-danger btn-elevate btn-circle btn-icon" ><i class="flaticon-circle"></i></a> 
                     </td>
-            </tr>
-            @endforeach
+                </tr>
+                @endforeach
                 </tbody>  
-                
-               
             </table>
         </div>
     </div>

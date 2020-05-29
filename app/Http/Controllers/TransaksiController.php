@@ -32,6 +32,7 @@ class TransaksiController extends Controller
         ->join('cars', 'transaksi.car_id', '=', 'cars.id')
         ->select('*','transaksi.id AS id_transaksi','customers.name AS name_customer','cars.name AS name_car')
         ->where('transaksi.deleted_at','=',Null)
+        ->where('transaksi.status_transaksi','=',0)
         ->get();
         return view('backend.transaksi.index',compact('data','no'));
     }
@@ -149,7 +150,7 @@ class TransaksiController extends Controller
             $transaksi->status_transaksi = 1;
             $transaksi->save();
             alert()->success('Berhasil','Status transaksi telah dirubah!');
-            return redirect()->route('transaksi.index');
+            return redirect()->route('riwayat.index');
         }else{
             alert()->warning('Gagal','ID tidak ditemukan!');
             return redirect()->route('transaksi.index');

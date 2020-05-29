@@ -62,8 +62,11 @@ Route::get('/car/{id}/destroyImage','CarController@destroyImage')->name('car.des
 
     //Transaksi
     Route::get('/transaksi', 'TransaksiController@index')->name('transaksi.index');
-    Route::get('/riwayat', 'TransaksiController@riwayat')->name('riwayat.index');
     Route::get('transaksi/create', 'TransaksiController@create')->name('transaksi.create');
     Route::post('/transaksi/store', 'TransaksiController@store')->name('transaksi.store');
     Route::get('/transaksi/complete/{id}','TransaksiController@complete')->name('transaksi.complete');
     Route::get('/transaksi/destroy/{id}','TransaksiController@destroy')->name('transaksi.destroy');
+
+    //Riwayat
+    Route::get('/riwayat', 'RiwayatController@index')->name('riwayat.index');
+    Route::get('/riwayat/destroy/{id}', 'RiwayatController@destroy')->name('riwayat.destroy');
