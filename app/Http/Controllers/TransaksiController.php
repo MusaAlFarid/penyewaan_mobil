@@ -30,9 +30,8 @@ class TransaksiController extends Controller
         $data = DB::table('transaksi')
         ->join('customers', 'transaksi.customer_id', '=', 'customers.id')
         ->join('cars', 'transaksi.car_id', '=', 'cars.id')
-        ->select('*','customers.name AS name_customer','cars.name AS name_car')
+        ->select('*','transaksi.id AS id_transaksi','customers.name AS name_customer','cars.name AS name_car')
         ->get();
-        
         return view('backend.transaksi.index',compact('data','no'));
     }
 
@@ -78,7 +77,7 @@ class TransaksiController extends Controller
             'final_date' => null,
             'amount_price' => Carbon::parse($request->rent_date)->diffInDays($request->return_date) * $car->price,
             'amount_penalty' => 0,
-            'status' => 0
+            'status_transaksi' => 0
         ]);
 
         alert()->success('Berhasil','Data telah ditambahkan!');
@@ -136,8 +135,36 @@ class TransaksiController extends Controller
      * @param  \App\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    // public function destroy(Transaksi $transaksi)
+    // {
+    //     //
+    // }
+
+    public function complete($id)
     {
-        //
+        $id_transaksi = $id;
+        $transaksi = Transaction::find($id);
+        if(!empty($transaksi)){
+            $transaksi->status_transaksi = 1;
+            $transaksi->save();
+            alert()->success('Berhasil','Status transaksi telah dirubah!');
+            return redirect()->route('transaksi.index');
+        }else{
+            alert()->warning('Gagal','ID tidak ditemukan!');
+            return redirect()->route('transaksi.index');
+        }
+    }
+
+    public function destroy($id){
+        $id_transaksi = $id;
+        $transaksi = Transaction::find($id);
+        if(!empty($transaksi)){
+            Transaction::destroy($id);
+            alert()->success('Berhasil Hapus','Transaksi telah dihapus!');
+            return redirect()->route('transaksi.index');
+        }else{
+            alert()->warning('Gagal','ID tidak ditemukan!');
+            return redirect()->route('transaksi.index');
+        }
     }
 }

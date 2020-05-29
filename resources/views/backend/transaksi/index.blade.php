@@ -33,7 +33,7 @@
                   {{-- name cars --}}
                   <td>{{$item->name_car}}</td>
                   <td>
-                    @if($item->status)
+                    @if($item->status_transaksi)
                         <span class="btn btn-label-success btn-pill">Selesai</span>
                     @else
                         <span class="btn btn-label-danger btn-pill">Belum</span>
@@ -41,12 +41,12 @@
                   </td>
                   
                   
-                  <td> <form action="" method="POST">
-                    {{ csrf_field() }}
-                    <input name="_method" type="hidden" value="DELETE">
-                    <a href="" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-check-mark"></i></a> 
-                    <button class="btn btn-outline-danger btn-elevate btn-circle btn-icon" type="submit" onclick="return confirm('Anda yakin ingin menghapus Customer ?')"><i class="flaticon-circle"></i></button>
-                </form></td>
+                  <td>
+                    @if($item->status_transaksi == false)
+                    <a href="{{ route('transaksi.complete', ['id' => $item->id_transaksi]) }}" class="btn btn-outline-success btn-elevate btn-circle btn-icon" ><i class="flaticon2-check-mark"></i></a> 
+                    @endif
+                    <a href="{{ route('transaksi.destroy', ['id' => $item->id_transaksi]) }}" class="btn btn-outline-danger btn-elevate btn-circle btn-icon" ><i class="flaticon-circle"></i></a> 
+                    </td>
             </tr>
             @endforeach
                 </tbody>  

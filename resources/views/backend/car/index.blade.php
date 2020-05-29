@@ -27,7 +27,7 @@
                     <td>{{$item->name}}</td>
                     <td>{{$item->manufacture}}</td>
                         <td>{{$item->year}}</td>
-                        <td>Rp.{{ $item->price}}</td>
+                        <td>Rp.{{ $item->price}} {{ $item->status }}</td>
                         @if ($item->status=='o')
                         <td style="color:blue;"><b>ready</b></td>
                         @else
