@@ -31,6 +31,7 @@ class TransaksiController extends Controller
         ->join('customers', 'transaksi.customer_id', '=', 'customers.id')
         ->join('cars', 'transaksi.car_id', '=', 'cars.id')
         ->select('*','transaksi.id AS id_transaksi','customers.name AS name_customer','cars.name AS name_car')
+        ->where('transaksi.deleted_at','=',Null)
         ->get();
         return view('backend.transaksi.index',compact('data','no'));
     }
